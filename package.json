@@ -14,9 +14,12 @@
     "@remix-run/node": "^2.13.1",
     "@remix-run/react": "^2.13.1",
     "@remix-run/serve": "^2.13.1",
+    "firebase": "^11.0.2",
+    "flowbite-react": "^0.10.2",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-tailwindcss-select": "^1.8.5"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.13.1",
