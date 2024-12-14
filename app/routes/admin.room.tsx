@@ -1,24 +1,26 @@
 import { useLoaderData } from "@remix-run/react";
 import { Table, TableHead } from "flowbite-react";
-import { useState } from "react";
-import AddRoom from "~/components/modal/AddRoom";
+// import { useState } from "react";
+// import AddRoom from "~/components/modal/AddRoom";
 import Pagination from "~/components/Pagination";
 import { Hotel } from "~/types/hotel";
 
-export const loader = async () => {};
+export const loader = async () => {
+  return null;
+};
 
 export default function Room() {
-  const hotel: Hotel = useLoaderData();
+  // const hotel: Hotel = useLoaderData();
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const onClickAddRoom = () => setIsModalOpen(true);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const onClickAddRoom = () => setIsModalOpen(true);
   return (
     <section className="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
-      <AddRoom
+      {/* <AddRoom
         hotelId={hotel.id}
         openModal={isModalOpen}
         onCloseModal={() => setIsModalOpen(false)}
-      />
+      /> */}
       <div className="mx-auto max-w-screen-xl px-4 lg:px-12">
         <div className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
@@ -56,7 +58,7 @@ export default function Room() {
             <div className="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
               <button
                 type="button"
-                onClick={onClickAddRoom}
+                // onClick={onClickAddRoom}
                 className="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
               >
                 <svg
@@ -253,7 +255,7 @@ export default function Room() {
                 </Table.HeadCell>
               </TableHead>
               <Table.Body className="divide-y">
-                {hotel.rooms.map((room, index) => (
+                {/* {hotel.rooms.map((room, index) => (
                   <Table.Row
                     className="bg-white dark:border-gray-700 dark:bg-gray-800"
                     key={room.id}
@@ -272,7 +274,7 @@ export default function Room() {
                       </a>
                     </Table.Cell>
                   </Table.Row>
-                ))}
+                ))} */}
               </Table.Body>
             </Table>
           </div>

@@ -1,22 +1,19 @@
 import Sidebar from "~/components/Sidebar";
 import { Outlet, redirect } from "@remix-run/react";
 import { LoaderFunction } from "@remix-run/node";
-import { auth } from "~/services/firebase";
-import { getUserSnapshot } from "~/services/auth";
+
+import { checkAuth } from "~/services/auth";
 
 export const loader: LoaderFunction = async () => {
-  const user = auth.currentUser;
+  const auth = await checkAuth();
 
-  if (!user) {
+  if (!auth) {
     return redirect("/login");
   }
-  const userSnapshot = await getUserSnapshot(user.uid);
-  if (userSnapshot.exists()) {
-    return {
-      roles: userSnapshot.data().roles,
-    };
-  }
-  return null;
+
+  return {
+    roles: auth.roles,
+  };
 };
 
 export default function AdminLayout() {

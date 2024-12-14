@@ -5,10 +5,10 @@ import {
   HiChartPie,
   HiInbox,
   HiShoppingBag,
-  HiTable,
   HiUser,
 } from "react-icons/hi";
-
+import { FaHotel } from "react-icons/fa6";
+import { FaConciergeBell } from "react-icons/fa";
 import { MdHotel } from "react-icons/md";
 
 export default function Sidabar() {
@@ -26,6 +26,9 @@ export default function Sidabar() {
               <Link to="/admin/">
                 <Sidebar.Item icon={HiChartPie}>Dashboard</Sidebar.Item>
               </Link>
+              <Link to="/admin/hotel">
+                <Sidebar.Item icon={FaHotel}>Hotel</Sidebar.Item>
+              </Link>
               <Sidebar.Item href="/admin/room" icon={MdHotel}>
                 Room
               </Sidebar.Item>
@@ -38,16 +41,19 @@ export default function Sidabar() {
               <Sidebar.Item href="#" icon={HiShoppingBag}>
                 Products
               </Sidebar.Item>
-              <Sidebar.Item icon={HiArrowSmRight}>Logout</Sidebar.Item>
-              <Sidebar.Item href="#" icon={HiTable}>
-                Sign Up
-              </Sidebar.Item>
+              <Link to={"/logout"}>
+                <Sidebar.Item icon={HiArrowSmRight}>Logout</Sidebar.Item>
+              </Link>
             </Sidebar.ItemGroup>
           </Sidebar.Items>
         ) : null}
         {roles === "superadmin" ? (
           <Sidebar.Items>
             <Sidebar.ItemGroup>
+              <Sidebar.Item icon={HiChartPie}>Dashboard</Sidebar.Item>
+              <Link to="/admin/facility">
+                <Sidebar.Item icon={FaConciergeBell}>Facilities</Sidebar.Item>
+              </Link>
               <Sidebar.Item href="/admin/room" icon={MdHotel}>
                 Room
               </Sidebar.Item>
